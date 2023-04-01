@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "watch": "mix watch && php /Users/kadegray/Sites/ibexel/statamic-phone-number-fieldtype/artisan vendor:publish --tag=statamic-phone-number-fieldtype --force",
+    "build": "mix"
+  },
+  "devDependencies": {
+    "intl-tel-input": "^17.0.21",
+    "laravel-mix": "^6.0.48",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

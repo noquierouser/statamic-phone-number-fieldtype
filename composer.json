@@ -1,0 +1,38 @@
+{
+  "name": "kadegray/statamic-phone-number-fieldtype",
+  "description": "Statamic Phone Number Fieldtype Addon",
+  "authors": [
+    {
+      "name": "Kade Gray"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kadegray\\StatamicPhoneNumberFieldtype\\": "src"
+    }
+  },
+  "extra": {
+    "statamic": {
+      "name": "Statamic Phone Number Fieldtype",
+      "description": "Statamic Phone Number Fieldtype Addon"
+    },
+    "laravel": {
+      "providers": [
+        "Kadegray\\StatamicPhoneNumberFieldtype\\ServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pixelfear/composer-dist-plugin": true
+    }
+  },
+  "require-dev": {
+    "statamic/cms": "^3.3"
+  },
+  "require": {
+    "sokil/php-isocodes": "^4.1",
+    "sokil/php-isocodes-db-i18n": "^4.0",
+    "giggsey/libphonenumber-for-php": "^8.13"
+  }
+}
