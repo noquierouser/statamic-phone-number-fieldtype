@@ -69,7 +69,7 @@ If you named the field handle `phone_number` then you can render the original st
 {{ australia_phone_number }}
 ```
 
-**+12015550123**
+**+12015550123**  
 **+61412345678**
 
 However, you probably want to render the number in the national format. For this you can use the modifier `e164_to_national`:
@@ -79,7 +79,7 @@ However, you probably want to render the number in the national format. For this
 {{ australia_phone_number | e164_to_national }}
 ```
 
-**(201) 555-0123**
+**(201) 555-0123**  
 **0412 345 678**
 
 You might also like to render the in a nicer international format using `e164_to_international`.
@@ -89,5 +89,5 @@ You might also like to render the in a nicer international format using `e164_to
 {{ australia_phone_number | e164_to_international }}
 ```
 
-**+1 201-555-0123**
+**+1 201-555-0123**  
 **+61 412 345 678**
