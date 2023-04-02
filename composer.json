@@ -14,7 +14,7 @@
   "extra": {
     "statamic": {
       "name": "Statamic Phone Number Fieldtype",
-      "description": "Statamic Phone Number Fieldtype Addon"
+      "description": "Statamic Phone Number Fieldtype is a Statamic addon that is everything you need to store and display Phone Numbers on your site."
     },
     "laravel": {
       "providers": [
