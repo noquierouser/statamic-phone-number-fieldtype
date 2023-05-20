@@ -15,6 +15,7 @@ class ServiceProvider extends AddonServiceProvider
 
     protected $scripts = [
         __DIR__ . '/../public/js/addon.js',
+        __DIR__ . '/../public/js/utils.js',
     ];
 
     protected $publishables = [
