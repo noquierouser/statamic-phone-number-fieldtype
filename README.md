@@ -5,18 +5,18 @@
 ## Features
 
 - A Phone Number Fieldtype that uses the [International Telephone Input](https://intl-tel-input.com/).
-  - Phone numbers will be saved in [E164 format](https://www.twilio.com/docs/glossary/what-e164), the international standard.
-  - A Country select.
-    - A user can select a country and then start entering their number in their national format.
-    - A user can also start entering a phone number in international format and the country will automatically be selected in the country select.
-  - Hide the country select.
-  - Set an **initial country**.
-  - Set **preferred countries** to be displayed in the country select.
-  - **Exclude countries** from the country select.
-  - Set the **only countries** to be listed in the country select.
+  - **E164 Format**: Phone numbers will be saved in [E164 format](https://www.twilio.com/docs/glossary/what-e164), the international standard.
+  - **Country Selection**: Users can select their country and input phone numbers in the national format for ease of use.
+  - **Automatic Country Detection**: When users input a phone number in international format, the corresponding country is automatically selected.
+  - Customization Options:
+    - **Hide Country Select**: Tailor the user interface by hiding the Country select field if not needed.
+    - **Initial Country**: Set a default country for a smoother user experience.
+    - **Preferred Countries**: Highlight commonly used countries in the Country select dropdown.
+    - **Exclude Countries**: Customize the available country options by excluding specific countries.
+    - **Only Countries**: Choose to display only certain countries in the Country select dropdown.
 - Modifiers
-  - **e164_to_national** will change the E164 formatted phone number into the national format.
-  - **e164_to_international** will change the E164 formatted phone number into the international format.
+  - **e164_to_national**: Convert E164 formatted phone numbers to the national format.
+  - **e164_to_international**: Convert E164 formatted phone numbers to the international format.
 
 ## How to Install
 
@@ -30,39 +30,39 @@ composer require kadegray/statamic-phone-number-fieldtype
 
 ### Phone Number Fieldtype
 
-After adding the Phone Number Fieldtype to your blueprint, when edited an entry it will display as an [International Telephone Input](https://intl-tel-input.com/).
+Once you include the Phone Number Fieldtype in your blueprint and edit an entry, it will be presented as an [International Telephone Input](https://intl-tel-input.com/) for convenient input and display.
 
 <img src="readme/images/entry_input.png"
     alt="Phone Number Fieldytype in Entry" />
 
-The country select will look like this when it is opened:
+When you open the country select, it will be displayed in the following manner:
 
 <img src="readme/images/entry_input_countries_select.png"
     alt="Phone Number Fieldytype with Countries select open" />
 
-When a user types in the input 2015550123, the fieldtype will automatically format it in E164 format +12015550123, +1 is the country code. The phone number will be saved to the entry in E164 format.
+When a user inputs "2015550123" into the field, the fieldtype will automatically format it into E164 format as "+12015550123", where "+1" represents the country code. The phone number will be saved in E164 format within the entry.
 
 <img src="readme/images/entry_input_number_entered.png"
     alt="Phone Number Fieldytype with number entered" />
 
-You will notice that if you reload the page, after saving the entry, it will format the number in the national format. This is fine, it knows how to handle international and national numbers based on the country selected.
+Upon reloading the page after saving the entry, you will observe that the number is automatically formatted in the national format. This formatting behavior is based on the selected country, allowing for proper handling of both international and national numbers.
 
 <img src="readme/images/entry_input_displayed_in_national_format.png"
     alt="Phone Number Fieldytype with number entered" />
 
 #### Fieldtype Configuration
 
-When you edit the Fieldtype you can configure these:
+When you edit the Fieldtype, you have the ability to configure the following options:
 
-- `Show Country Select` - Toggle display of the Country select.
+- `Show Country Select` - Enable or disable the display of the Country select.
 - `Initial Country` - Set an initial Country.
-- `Preferred Countries` - Set preferred Countries to display at the top in the Countries select.
-- `Exclude Countries` - Set Countries to exclude from the Countries select.
-- `Only Countries` - Set the only Countries to display in the Countries select.
+- `Preferred Countries` - Specify preferred Countries to be displayed at the top in the Countries select.
+- `Exclude Countries` - Exclude specific Countries from being shown in the Countries select.
+- `Only Countries` - Specify the only Countries to be displayed in the Countries select.
 
 ### Modifiers
 
-If you named the field handle `phone_number` then you can render the original stored E164 formatted value with:
+If you have assigned the field handle as `phone_number` or `australia_phone_number`, you can render the original stored value in E164 format using the following code:
 
 ```
 {{ phone_number }}
@@ -72,7 +72,7 @@ If you named the field handle `phone_number` then you can render the original st
 **+12015550123**  
 **+61412345678**
 
-However, you probably want to render the number in the national format. For this you can use the modifier `e164_to_national`:
+However, if you prefer to render the number in the national format, you can utilize the `e164_to_national` modifier as follows:
 
 ```
 {{ phone_number | e164_to_national }}
@@ -82,7 +82,7 @@ However, you probably want to render the number in the national format. For this
 **(201) 555-0123**  
 **0412 345 678**
 
-You might also like to render the in a nicer international format using `e164_to_international`.
+Additionally, if you would like to present the number in a more visually appealing international format, you can utilize the `e164_to_international` modifier:
 
 ```
 {{ phone_number | e164_to_international }}
