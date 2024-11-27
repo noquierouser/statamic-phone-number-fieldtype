@@ -9,6 +9,7 @@ use Sokil\IsoCodes\IsoCodesFactory;
 
 class PhoneNumberFieldtype extends Fieldtype
 {
+    protected $selectableInForms = true;
 
     /**
      * The blank/default value.
